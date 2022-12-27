@@ -5,6 +5,7 @@ package org.andrew.crud.models;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
+import java.util.List;
 
 @Entity
 @Table(name = "Person")
@@ -28,6 +29,9 @@ public class Person {
     @Email(message = "Invalid email")
     @Column(name = "email")
     private String email;
+
+    @OneToMany
+    private List<Item> items;
 
     public Person() {
     }
